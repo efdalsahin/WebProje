@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SkyPioneer.Models.HavaAlani>
+
+@{
+    ViewData["Title"] = "HavaAlanlariDetails";
+}
+
+<h1>HavaAlanlariDetails</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ulke)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ulke)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HavaAlaniID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HavaAlaniID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HavaAlaniID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

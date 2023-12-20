@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SkyPioneer.Models.Ucak>
+
+@{
+    ViewData["Title"] = "UcaklarDetails";
+}
+
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75">
+<h1>UcaklarDetails</h1>
+
+<p>
+    <a asp-action="UcakCreate" asp-controller="Ucak">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Modell)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kapasite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HavaYolu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modell)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kapasite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HavaYolu.Isim)
+            </td>
+            <td>
+                <a asp-action="UcakDetails" asp-controller="Ucak" asp-route-id="@item.UcakID">Details</a>
+                <a asp-action="UcakDelete" asp-controller="Ucak" asp-route-id="@item.UcakID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+    </div>
+
+</div>

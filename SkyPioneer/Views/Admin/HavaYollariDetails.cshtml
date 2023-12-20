@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SkyPioneer.Models.HavaYolu>
+
+@{
+    ViewData["Title"] = "HavaYollariDetails";
+}
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75">
+<h1>Hava Yollari</h1>
+
+<p>
+    <a asp-action="HavaYoluCreate" asp-controller="HavaYolu">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ulke)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ulke)
+            </td>
+            <td>
+        
+                            <a asp-action="HavaYoluDetails" asp-controller="HavaYolu" asp-route-id="@item.HavaYoluID">Details</a> 
+                <a asp-action="HavaYoluDelete" asp-controller="HavaYolu" asp-route-id="@item.HavaYoluID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+
+</div>

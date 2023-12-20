@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SkyPioneer.Models.Kullanici>
+
+@{
+    ViewData["Title"] = "KullanicilarDetails";
+}
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75">
+<h1>KullanicilarDetails</h1>
+
+<p>
+    <a asp-action="Kayit" asp-controller="Kullanici">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoyIsim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KayitTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sifre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MailAdres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yetki)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoyIsim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KayitTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sifre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailAdres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yetki)
+            </td>
+            <td>
+                <a asp-action="KullaniciDetailss" asp-controller="Kullanici" asp-route-id="@item.KullaniciID">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.KullaniciID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </div>
+
+</div>

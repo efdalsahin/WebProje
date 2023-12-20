@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SkyPioneer.Models.Ucus>
+
+@{
+    ViewData["Title"] = "Listele";
+}
+
+<div class="UcusListele">
+
+
+
+
+@foreach (var item in Model) {
+    <div class="p-4 bg-white bg-opacity-75 mt-4 mb-4 ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.KalkisSaati)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kalkis.Isim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Varis.Isim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fiyat)
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.KalkisSaati)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kalkis.Isim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Varis.Isim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fiyat)
+                </td>
+                <td>
+                    <a asp-action="SatinAl" asp-controller="Bilet" asp-route-id="@item.UcusID">Satın Al</a> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
+}
+
+</div>
+ 

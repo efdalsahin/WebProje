@@ -16,6 +16,50 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\efdal\source\SkyPioneer\SkyPioneer
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/HavaAlanlariDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGF2YUFsYW5sYXJpRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/HavaYollariDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGF2YVlvbGxhcmlEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/KullanicilarDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cS3VsbGFuaWNpbGFyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/UcaklarDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVWNha2xhckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/UcuslarDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVWN1c2xhckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Arama/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJhbWFcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Arama/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJhbWFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Arama/Listele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJhbWFcTGlzdGVsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Bilet/KullaniciBiletler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsZXRcS3VsbGFuaWNpQmlsZXRsZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Bilet/SatinAl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsZXRcU2F0aW5BbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

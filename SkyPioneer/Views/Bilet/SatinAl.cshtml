@@ -1,0 +1,79 @@
+﻿@model SkyPioneer.Models.Bilet
+
+@{
+    ViewData["Title"] = "SatinAl";
+}
+
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75 p-4">
+<h4>Bilet</h4>
+<hr />
+<div class="row">
+            <dl class="row">
+                <dt class="col-sm-6">
+                    Kalkis Saati
+                </dt>
+                <dd class="col-sm-6">
+                    @ViewBag.ucus.KalkisSaati
+                </dd>
+                <dt class="col-sm-6">
+                    Kalkış Yeri
+                </dt>
+                <dd class="col-sm-6">
+                    @ViewBag.ucus.Kalkis.Isim
+                </dd>
+                <dt class="col-sm-6">
+                    Varış Yeri
+                </dt>
+                <dd class="col-sm-6">
+                    @ViewBag.ucus.Varis.Isim
+                </dd>
+                <dt class="col-sm-6">
+                    HavaYolu
+                </dt>
+                <dd class="col-sm-6">
+                    @ViewBag.ucus.Ucak.HavaYolu.Isim
+                </dd>
+                <dt class="col-sm-6">
+                    Uçak Modeli
+                </dt>
+                <dd class="col-sm-6">
+                    @ViewBag.ucus.Ucak.Modell
+                </dd>
+                <dt class="col-sm-6">
+                    Fiyat
+                </dt>
+                <dd class="col-sm-6">
+                    @ViewBag.ucus.Fiyat
+                </dd>
+            
+             
+
+            </dl>
+    <div class="col-md-12">
+        <form asp-action="SatinAlOnay"  >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                        <input type="hidden" name="ucusId" value="@ViewBag.ucus.UcusID" />
+
+                <label asp-for="KoltukNo" class="control-label"></label>
+                <select asp-for="KoltukNo" asp-items="@ViewBag.musaitkoltuklar" name="koltukno"  class="form-control"></select>
+                <span asp-validation-for="KoltukNo"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Satın Al" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+
+</div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

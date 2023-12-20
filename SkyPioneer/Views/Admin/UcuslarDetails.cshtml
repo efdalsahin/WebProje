@@ -1,0 +1,66 @@
+﻿@model IEnumerable<SkyPioneer.Models.Ucus>
+
+@{
+    ViewData["Title"] = "UcusDetails";
+}
+
+
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+<div class="bg-white bg-opacity-75">
+<h1>UcusDetails</h1>
+
+<p>
+    <a asp-action="UcusCreate" asp-controller="Ucus">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UcusID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KalkisSaati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kalkis.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Varis.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UcusID)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.KalkisSaati)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Kalkis.Isim)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Varis.Isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                <a asp-controller="Ucus" asp-action="UcusDetails" asp-route-id="@item.UcusID">Detaylar</a>
+                <a asp-controller="Ucus" asp-action="UcusDelete" asp-route-id="@item.UcusID">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+
+                </div>

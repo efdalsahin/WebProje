@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    Layout = "~/Views/Shared/_Layout_giris.cshtml";
+}
+
+@model Arama
+
+<div id="girisDiv">
+
+   
+   
+    <div class="hero-section-card">
+        <form asp-action="Details" method="post" class="d-flex justify-content-center gap-2 flex-column">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="d-flex gap-4">
+                <div class="form-group mt-2 ">
+                    <label asp-for="From"></label>
+                    <select asp-for="From" asp-items="@ViewBag.From" id="firstDropdown" class="form-control"></select>
+                    <span asp-validation-for="From"></span>
+
+                </div>
+                <div class="form-group mt-2 ">
+                    <label asp-for="To"></label>
+                    <select asp-for="To" id="secondDropdown" class="form-control">
+                        <option class="">Select an item</option>
+                    </select>
+                    <span asp-validation-for="To"></span>
+
+                </div>
+                <div class="form-group mt-2">
+                    <label asp-for="Tarih"></label>
+                    <input asp-for="Tarih" class="form-control" />
+                    <span asp-validation-for="Tarih"></span>
+
+
+                </div>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Listele" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#secondDropdown').empty();
+        // İlk dropdown'un değişim olayı
+        $('#firstDropdown').change(function () {
+            var selectedValue = $(this).val();
+
+            // Ajax isteği gönder
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("ToAirport", "Arama")',
+                data: { id: selectedValue },
+                success: function (data) {
+                    // İkinci dropdown'u güncelle
+                    $('#secondDropdown').html('');
+                    $.each(data, function (i, item) {
+                        $('#secondDropdown').append($('<option>', {
+                            value: item.value,
+                            text: item.text
+                        }));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Ajax Error:', status, error);
+                }
+            });
+        });
+    });
+</script>
