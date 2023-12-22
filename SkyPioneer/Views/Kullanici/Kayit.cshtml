@@ -1,0 +1,55 @@
+﻿@model SkyPioneer.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Kayit";
+}
+
+
+
+
+<div class="orta">
+<div class="row">
+    <div class="bg-white bg-opacity-75 p-4">
+        <form asp-action="Kayit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Isim" class="control-label"></label>
+                <input asp-for="Isim" class="form-control" />
+                <span asp-validation-for="Isim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoyIsim" class="control-label"></label>
+                <input asp-for="SoyIsim" class="form-control" />
+                <span asp-validation-for="SoyIsim" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="TC" class="control-label"></label>
+                <input asp-for="TC" class="form-control" />
+                <span asp-validation-for="TC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MailAdres" class="control-label"></label>
+                <input asp-for="MailAdres" class="form-control" />
+                <span asp-validation-for="MailAdres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sifre" class="control-label"></label>
+                <input asp-for="Sifre" class="form-control" />
+                <span asp-validation-for="Sifre" class="text-danger"></span>
+            </div>
+            
+           
+            <div class="form-group d-flex justify-content-center ">
+                <input type="submit" value="Kayıt Ol" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,36 @@
+﻿@model SkyPioneer.Models.Kullanici
+
+@{
+    ViewData["Title"] = "HesapDuzenle";
+}
+
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75 p-4">
+<h4>Hesap Düzenle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="HesapDuzenle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Sifre" class="control-label"></label>
+                <input asp-for="Sifre" class="form-control" />
+                <span asp-validation-for="Sifre" class="text-danger"></span>
+            </div>
+  
+       
+            <div class="form-group">
+                <input type="submit" value="Değişiklikleri KAYDET" class="btn btn-primary" />
+            </div>
+        </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

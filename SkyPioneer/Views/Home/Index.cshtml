@@ -1,8 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@{
+    Layout = "~/Views/Shared/_Layout_giris.cshtml";
+}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model Arama
+
+<div id="girisDiv">
+
+<div class="text-center border-1 deneme" >
+   
+    
+</div>
+    <div class="hero-section-card">
+        <form asp-action="TakeTicket" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mt-2">
+                <label asp-for="From"></label>
+                <select asp-for="From" asp-items="@ViewBag.From" id="firstDropdown" class="form-control"></select>
+                <span asp-validation-for="From"></span>
+
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="To"></label>
+                <select asp-for="To" id="secondDropdown" class="form-control">
+                    <option>Select an item</option>
+                </select>
+                <span asp-validation-for="To"></span>
+
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Tarih"></label>
+                <input asp-for="Tarih" class="form-control" />
+                <span asp-validation-for="Tarih"></span>
+
+
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Listele" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
 </div>
