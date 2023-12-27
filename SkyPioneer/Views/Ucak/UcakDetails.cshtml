@@ -1,0 +1,37 @@
+﻿@model SkyPioneer.Models.Ucak
+
+@{
+    ViewData["Title"] = "UcakDetails";
+}
+<div class="orta ">
+    <div class="bg-white bg-opacity-75 text-center">
+<h1>UcakDetails</h1>
+
+
+    <h4>Ucak</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modell)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modell)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kapasite)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kapasite)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HavaYolu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HavaYolu.Isim)
+        </dd>
+    </dl>
+</div>
+
+
+</div>
+

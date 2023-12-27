@@ -1,0 +1,85 @@
+﻿@model SkyPioneer.Models.Ucus
+
+@{
+    ViewData["Title"] = "UcusCreate";
+}
+
+
+<div class="orta">
+<h4>Ucus Olustur</h4>
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+<hr />
+<div class="row bg-white bg-opacity-75">
+    <div class="col-md-12">
+        <form asp-action="UcusCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KalkisSaati" class="control-label"></label>
+                <input asp-for="KalkisSaati" class="form-control" />
+                <span asp-validation-for="KalkisSaati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KalkisID" class="control-label"></label>
+                <select asp-for="KalkisID" asp-items="@ViewBag.From" id="firstDropdown" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VarisID" class="control-label"></label>
+                <select asp-for="VarisID" id="secondDropdown" class="form-control">
+                    <option class="">Select an item</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat" class="control-label"></label>
+                <input asp-for="Fiyat" class="form-control" />
+                <span asp-validation-for="Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UcakID" class="control-label"></label>
+                <select asp-for="UcakID" class ="form-control" asp-items="ViewBag.Ucak"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#secondDropdown').empty();
+        // İlk dropdown'un değişim olayı
+        $('#firstDropdown').change(function () {
+            var selectedValue = $(this).val();
+
+            // Ajax isteği gönder
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("ToAirport", "Arama")',
+                data: { id: selectedValue },
+                success: function (data) {
+                    // İkinci dropdown'u güncelle
+                    $('#secondDropdown').html('');
+                    $.each(data, function (i, item) {
+                        $('#secondDropdown').append($('<option>', {
+                            value: item.value,
+                            text: item.text
+                        }));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Ajax Error:', status, error);
+                }
+            });
+        });
+    });
+</script>

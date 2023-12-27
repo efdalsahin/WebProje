@@ -1,0 +1,54 @@
+﻿@model SkyPioneer.Models.Ucus
+
+@{
+    ViewData["Title"] = "UcusDetails";
+}
+
+
+
+<div class="orta">
+
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75 p-4">
+    <h4>Ucus Detayları</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.KalkisSaati)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.KalkisSaati)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Kalkis)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Kalkis.Isim)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Varis)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Varis.Isim)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Ucak)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Ucak.Modell)
+        </dd>
+            <dd class="col-sm-12">
+                <a asp-action="Edit" asp-route-id="@Model?.UcusID">Düzenle</a> 
+            </dd>
+    
+    </dl>
+</div>
+
+
+</div>

@@ -108,6 +108,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Ucak/UcakCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xVY2FrQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Ucak/UcakDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xVY2FrRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Ucak/UcakDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xVY2FrRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Ucus/UcusCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xVY3VzQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Ucus/UcusDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xVY3VzRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Ucus/UcusDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xVY3VzRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -119,3 +143,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xw5kszuxhd
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Shared/_Layout_giris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfZ2lyaXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-h4buwm26cj
