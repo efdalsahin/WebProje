@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SkyPioneer.Models;
 using System.Net.Http;
+using System.Security.Claims;
 
 namespace SkyPioneer.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         ApplicationDbContext context = new ApplicationDbContext();
@@ -47,7 +48,7 @@ namespace SkyPioneer.Controllers
                         var responseData = await response.Content.ReadAsStringAsync();
                         // responseData içinde API'nin cevabını kullanabilirsiniz
                         // ...
-                        var ucuslar=JsonConvert.DeserializeObject<List<Ucus>>(responseData);
+                        var ucuslar = JsonConvert.DeserializeObject<List<Ucus>>(responseData);
                         return View(ucuslar);
                     }
                     else
@@ -71,7 +72,7 @@ namespace SkyPioneer.Controllers
         }
         public IActionResult HavaAlanlariDetails()
         {
-            var dataFromDatabase=context.HavaAlanlari.ToList();
+            var dataFromDatabase = context.HavaAlanlari.ToList();
 
             return View(dataFromDatabase);
         }
@@ -90,7 +91,7 @@ namespace SkyPioneer.Controllers
             foreach (var item in dataFromDatabase)
             {
                 item.HavaYolu = context.HavaYollari.Where(k => k.HavaYoluID == item.HavaYoluID).FirstOrDefault();
-               
+
 
 
             }
@@ -105,6 +106,22 @@ namespace SkyPioneer.Controllers
             return View(dataFromDatabase);
         }
 
+        public IActionResult BiletlerDetails()
+        {
 
+            var datafromdatabase = context.Biletler.ToList();
+
+            foreach (var item in datafromdatabase)
+            {
+                item.Ucus = context.Ucuslar.Where(k => k.UcusID == item.UcusID).FirstOrDefault();
+                item.Kullanici = context.Kullancilar.Where(k => k.KullaniciID == item.KullaniciID).FirstOrDefault();
+                item.Ucus.Kalkis = context.HavaAlanlari.Where(k => k.HavaAlaniID == item.Ucus.KalkisID).FirstOrDefault();
+                item.Ucus.Varis = context.HavaAlanlari.Where(k => k.HavaAlaniID == item.Ucus.VarisID).FirstOrDefault();
+            }
+
+            return View(datafromdatabase);
+
+
+        }
     }
 }

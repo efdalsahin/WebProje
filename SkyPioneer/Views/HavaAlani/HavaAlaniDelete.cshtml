@@ -1,0 +1,42 @@
+﻿@model SkyPioneer.Models.HavaAlani
+
+@{
+    ViewData["Title"] = "HavaAlaniDelete";
+}
+
+<div class="orta">
+    <h1>HavaAlaniDelete</h1>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div class="bg-white bg-opacity-75 text-center p-4">
+    <h4>HavaAlani</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Kod)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Kod)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Ulke)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Ulke)
+        </dd>
+    </dl>
+
+        <form asp-action="HavaAlaniDeletee" asp-route-id="@Model.HavaAlaniID">
+        <input type="hidden" asp-for="HavaAlaniID" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> 
+    </form>
+    </div>
+</div>
+
+

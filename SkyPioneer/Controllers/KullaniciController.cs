@@ -53,14 +53,15 @@ namespace SkyPioneer.Controllers
             ModelState.Remove("Yetki");
 
             var datafromdatabase=context.Kullancilar.Where(k=>k.MailAdres==kullanici.MailAdres && k.Sifre==kullanici.Sifre).FirstOrDefault();
-            var isAdmin = (datafromdatabase.Yetki == "Admin");
+            
             if (datafromdatabase == null)
             {
                 TempData["msj"] = "Giris bilgileri hatalıdır.";
                 return RedirectToAction("Giris");
             }
+            var isAdmin = (datafromdatabase.Yetki == "Admin");
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 List<Claim> claims ;
                 if (isAdmin)

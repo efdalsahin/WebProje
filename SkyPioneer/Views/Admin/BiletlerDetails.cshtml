@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SkyPioneer.Models.Bilet>
+
+@{
+    ViewData["Title"] = "BiletlerDetails";
+}
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75">
+        <h1>Biletler</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Kullanici.Isim)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ucus.Kalkis.Isim)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ucus.Varis.Isim)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.KoltukNo)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kullanici.Isim)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ucus.Kalkis.Isim)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ucus.Varis.Isim)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KoltukNo)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

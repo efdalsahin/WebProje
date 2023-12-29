@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\efdal\source\SkyPioneer\SkyPioneer
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/BiletlerDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmlsZXRsZXJEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Admin/HavaAlanlariDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGF2YUFsYW5sYXJpRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,12 +56,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJhbWFcTGlzdGVsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Bilet/BiletDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsZXRcQmlsZXREZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Bilet/KullaniciBiletler.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsZXRcS3VsbGFuaWNpQmlsZXRsZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/Bilet/SatinAl.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsZXRcU2F0aW5BbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/HavaAlani/HavaAlaniCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YUFsYW5pXEhhdmFBbGFuaUNyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/HavaAlani/HavaAlaniDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YUFsYW5pXEhhdmFBbGFuaURlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/HavaAlani/HavaAlaniDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YUFsYW5pXEhhdmFBbGFuaURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/efdal/source/SkyPioneer/SkyPioneer/Views/HavaYolu/HavaYoluCreate.cshtml]

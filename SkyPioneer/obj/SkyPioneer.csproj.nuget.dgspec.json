@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\efdal\\source\\repos\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj": {}
+    "C:\\Users\\efdal\\source\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\efdal\\source\\repos\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj": {
+    "C:\\Users\\efdal\\source\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\efdal\\source\\repos\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj",
+        "projectUniqueName": "C:\\Users\\efdal\\source\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj",
         "projectName": "SkyPioneer",
-        "projectPath": "C:\\Users\\efdal\\source\\repos\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj",
+        "projectPath": "C:\\Users\\efdal\\source\\SkyPioneer\\SkyPioneer\\SkyPioneer.csproj",
         "packagesPath": "C:\\Users\\efdal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\efdal\\source\\repos\\SkyPioneer\\SkyPioneer\\obj\\",
+        "outputPath": "C:\\Users\\efdal\\source\\SkyPioneer\\SkyPioneer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\efdal\\AppData\\Roaming\\NuGet\\NuGet.Config",

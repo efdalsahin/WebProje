@@ -82,11 +82,49 @@ namespace SkyPioneer.Controllers
             foreach (var item in datafromdatabase)
             {
                 item.Ucus = context.Ucuslar.Where(k => k.UcusID == item.UcusID).FirstOrDefault();
-              
+                item.Kullanici = context.Kullancilar.Where(k => k.KullaniciID == kullaniciid).FirstOrDefault();
+                item.Ucus.Kalkis = context.HavaAlanlari.Where(k => k.HavaAlaniID == item.Ucus.KalkisID).FirstOrDefault();
+                item.Ucus.Varis = context.HavaAlanlari.Where(k => k.HavaAlaniID == item.Ucus.VarisID).FirstOrDefault();
             }
 
             return View(datafromdatabase);
 
+        }
+
+        public IActionResult BiletDelete(int id)
+        {
+            int kullaniciid = id;
+
+            var datafromdatabase = context.Biletler.Where(k => k.KullaniciID == kullaniciid).FirstOrDefault();
+
+
+            datafromdatabase.Ucus = context.Ucuslar.Where(k => k.UcusID == datafromdatabase.UcusID).FirstOrDefault();
+            datafromdatabase.Kullanici = context.Kullancilar.Where(k => k.KullaniciID == kullaniciid).FirstOrDefault();
+            datafromdatabase.Ucus.Kalkis = context.HavaAlanlari.Where(k => k.HavaAlaniID == datafromdatabase.Ucus.KalkisID).FirstOrDefault();
+            datafromdatabase.Ucus.Varis = context.HavaAlanlari.Where(k => k.HavaAlaniID == datafromdatabase.Ucus.VarisID).FirstOrDefault();
+           
+
+            return View(datafromdatabase);
+          
+        }
+
+        [HttpPost]
+        public IActionResult BiletDeletee(int id)
+        {
+            int kullaniciid = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            
+            var datafromdatabase = context.Biletler.Where(k => k.BiletId == id).FirstOrDefault();
+            if (kullaniciid != datafromdatabase.KullaniciID)
+            {
+                TempData["msj"] ="Bu bileti silmeye yetkin yok ";
+                return RedirectToAction("KullaniciBiletler", "Bilet");
+            }
+            int temp = datafromdatabase.BiletId;
+            TempData["msj"] = temp + " id li bilet silindi ";
+
+            context.Biletler.Remove(datafromdatabase);
+            context.SaveChanges();
+            return RedirectToAction("KullaniciBiletler", "Bilet");
         }
 
     }

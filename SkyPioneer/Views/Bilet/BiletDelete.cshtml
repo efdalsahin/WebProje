@@ -1,0 +1,46 @@
+﻿@model SkyPioneer.Models.Bilet
+
+@{
+    ViewData["Title"] = "BiletDelete";
+}
+<div class="orta">
+<h1>BiletDelete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+    <div class="bg-white bg-opacity-75 text-center p-4">
+
+    <h4>Bilet</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Kullanici.Isim)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Kullanici.Isim)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Ucus.Kalkis.Isim)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.Ucus.Kalkis.Isim)
+        </dd>
+        <dt class="col-sm-6">
+            @Html.DisplayNameFor(model => model.Ucus.Varis.Isim)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.Ucus.Varis.Isim)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.KoltukNo)
+        </dt>
+        <dd class = "col-sm-6">
+            @Html.DisplayFor(model => model.KoltukNo)
+        </dd>
+    </dl>
+    
+    <form asp-action="BiletDeletee" asp-route-id="@Model.BiletId">
+        <input type="hidden" asp-for="BiletId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+    </div>
+</div>

@@ -3,20 +3,22 @@
 @{
     ViewData["Title"] = "KullaniciBiletler";
 }
-
+<div class="orta">
+    <h3 style="color:red; ">@TempData["msj"]</h3>
+    <div class="bg-white bg-opacity-75">
 <h1>KullaniciBiletler</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Kullanici)
+                @Html.DisplayNameFor(model => model.Kullanici.Isim)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ucus)
+                @Html.DisplayNameFor(model => model.Ucus.Kalkis.Isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ucus.Varis.Isim)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.KoltukNo)
@@ -31,17 +33,21 @@
                 @Html.DisplayFor(modelItem => item.Kullanici.KullaniciID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Ucus.UcusID)
+                @Html.DisplayFor(modelItem => item.Ucus.Kalkis.Isim)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ucus.Varis.Isim)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.KoltukNo)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.BiletId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BiletId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BiletId">Delete</a>
+                <a asp-action="BiletDelete" asp-route-id="@item.BiletId">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+    </div>
+
+</div>

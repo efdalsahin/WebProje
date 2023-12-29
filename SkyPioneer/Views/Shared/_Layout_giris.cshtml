@@ -54,6 +54,12 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item ">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Bilet" asp-action="KullaniciBiletler">Biletler</a>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="HesapDuzenle">Hesap Güncelle</a>
                             </li>
                         }

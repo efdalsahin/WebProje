@@ -1,0 +1,36 @@
+﻿@model SkyPioneer.Models.HavaAlani
+
+@{
+    ViewData["Title"] = "HavaAlaniDetails";
+}
+<div class="orta ">
+    <div class="bg-white bg-opacity-75 text-center">
+<h1>HavaAlaniDetails</h1>
+
+<div>
+    <h4>HavaAlani</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ulke)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ulke)
+        </dd>
+    </dl>
+        </div>
+
+
+    </div>
