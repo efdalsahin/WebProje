@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SkyPioneer.Migrations;
@@ -47,7 +48,7 @@ namespace SkyPioneer.Controllers
             }
             return Json(selectListItems);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: UcusController/Create
         public ActionResult UcusCreate()
         {
@@ -85,6 +86,7 @@ namespace SkyPioneer.Controllers
         }
 
         // POST: UcusController/Create
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult UcusCreate(Ucus ucus)
@@ -105,7 +107,7 @@ namespace SkyPioneer.Controllers
          
         }
 
-
+        [Authorize(Roles = "Admin")]
         // GET: UcusController/Delete/5
         public ActionResult UcusDelete(int id)
         {
@@ -122,8 +124,8 @@ namespace SkyPioneer.Controllers
         }
 
         // POST: UcusController/Delete/5
-        
-       
+
+        [Authorize(Roles = "Admin")]
         public ActionResult UcusDeletee(int id)
         {
             var dataFromDatabase = context.Ucuslar.Where(k => k.UcusID == id).FirstOrDefault();

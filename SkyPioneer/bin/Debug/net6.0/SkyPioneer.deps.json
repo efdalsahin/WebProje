@@ -16,6 +16,17 @@
         },
         "runtime": {
           "SkyPioneer.dll": {}
+        },
+        "resources": {
+          "de-DE/SkyPioneer.resources.dll": {
+            "locale": "de-DE"
+          },
+          "en-US/SkyPioneer.resources.dll": {
+            "locale": "en-US"
+          },
+          "tr-TR/SkyPioneer.resources.dll": {
+            "locale": "tr-TR"
+          }
         }
       },
       "Humanizer/2.14.1": {

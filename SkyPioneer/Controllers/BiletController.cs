@@ -94,6 +94,10 @@ namespace SkyPioneer.Controllers
         public IActionResult BiletDelete(int id)
         {
             int kullaniciid = id;
+            if (User.IsInRole("Admin"))
+            {
+                kullaniciid=context.Biletler.Where(k=>k.BiletId==id).FirstOrDefault().KullaniciID;
+            }
 
             var datafromdatabase = context.Biletler.Where(k => k.KullaniciID == kullaniciid).FirstOrDefault();
 

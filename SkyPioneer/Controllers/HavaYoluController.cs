@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SkyPioneer.Migrations;
 using SkyPioneer.Models;
@@ -20,14 +21,14 @@ namespace SkyPioneer.Controllers
 
             return View(dataFromDatabase);
         }
-       
 
+        [Authorize(Roles = "Admin")]
         public IActionResult HavaYoluCreate()
         {
             
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult HavaYoluCreate(HavaYolu havaYolu)
         {
@@ -42,7 +43,7 @@ namespace SkyPioneer.Controllers
             TempData["msj"] = havaYolu.Isim + " isimli havayolu eklenemedi ";
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult HavaYoluDelete(int id)
         {
             var dataFromDatabase = context.HavaYollari.Where(k => k.HavaYoluID == id).FirstOrDefault();
@@ -53,7 +54,7 @@ namespace SkyPioneer.Controllers
             return View(dataFromDatabase);
 
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult HavaYoluDeletee(int id)
         {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SkyPioneer.Migrations;
 using SkyPioneer.Models;
@@ -12,7 +13,7 @@ namespace SkyPioneer.Controllers
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult UcakCreate()
         {
 
@@ -30,7 +31,7 @@ namespace SkyPioneer.Controllers
             ViewBag.liste = selectListItems;
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult UcakCreate(Ucak ucak)
         {
@@ -48,7 +49,7 @@ namespace SkyPioneer.Controllers
             return View();
 
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult UcakDelete(int id)
         {
             var dataFromDatabase = context.Ucaklar.Where(k => k.UcakID == id).FirstOrDefault();
@@ -61,7 +62,7 @@ namespace SkyPioneer.Controllers
             return View(dataFromDatabase);
 
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult UcakDeletee(int id)
         {
             var dataFromDatabase = context.Ucaklar.Where(k => k.UcakID == id).FirstOrDefault();

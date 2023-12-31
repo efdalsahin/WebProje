@@ -63,6 +63,43 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Kullanici" asp-action="HesapDuzenle">Hesap Güncelle</a>
                             </li>
                         }
+                        <li>
+                            <div class="dropdown">
+                                <button type="button"
+                                        class="btn btn-primary dropdown-toggle"
+                                        data-bs-toggle="dropdown">
+                                    Localization
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-controller="Arama"
+                                           asp-action="ChangeLanguage"
+                                           asp-route-culture="en-US"
+                                           class="dropdown-item">
+                                             English
+                                        </a>
+                                    </li>
+                                    
+                                     <li>
+                                        <a asp-controller="Arama"
+                                           asp-action="ChangeLanguage"
+                                           asp-route-culture="tr-TR"
+                                           class="dropdown-item">
+                                             Türkçe
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Arama"
+                                           asp-action="ChangeLanguage"
+                                           asp-route-culture="fr-FR"
+                                           class="dropdown-item">
+                                            German
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
                         
                     </ul>
                 </div>

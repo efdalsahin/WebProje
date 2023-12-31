@@ -8,10 +8,11 @@
 @model Arama
 
 <div id="girisDiv">
-
-   
-   
+    <div class="bg-white bg-opacity-75 p-4">
+    <h1 style="color:blueviolet">@_localization.Getkey("Welcome").Value</h1>
+    </div>
     <div class="hero-section-card">
+        
         <form asp-action="Details" method="post" class="d-flex justify-content-center gap-2 flex-column">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="d-flex gap-4">

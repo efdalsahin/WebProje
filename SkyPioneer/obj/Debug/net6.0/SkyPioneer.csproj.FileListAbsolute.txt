@@ -554,3 +554,13 @@ C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\refint\SkyPioneer.d
 C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\SkyPioneer.pdb
 C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\SkyPioneer.genruntimeconfig.cache
 C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\ref\SkyPioneer.dll
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\bin\Debug\net6.0\en-US\SkyPioneer.resources.dll
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\bin\Debug\net6.0\tr-TR\SkyPioneer.resources.dll
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\SkyPioneer.Resources.SharedResource.en-US.resources
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\SkyPioneer.Resources.SharedResource.tr-TR.resources
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\SkyPioneer.csproj.GenerateResource.cache
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\en-US\SkyPioneer.resources.dll
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\tr-TR\SkyPioneer.resources.dll
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\bin\Debug\net6.0\fr-FR\SkyPioneer.resources.dll
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\SkyPioneer.Resources.SharedResource.fr-FR.resources
+C:\Users\efdal\source\SkyPioneer\SkyPioneer\obj\Debug\net6.0\fr-FR\SkyPioneer.resources.dll

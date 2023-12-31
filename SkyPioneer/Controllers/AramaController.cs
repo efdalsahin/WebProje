@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SkyPioneer.Models;
+using SkyPioneer.Services;
 
 namespace SkyPioneer.Controllers
 {
@@ -9,6 +11,11 @@ namespace SkyPioneer.Controllers
     public class AramaController : Controller
     {
         ApplicationDbContext context = new ApplicationDbContext();
+        private LanguageService _localization;
+        public AramaController( LanguageService localization)
+        {
+            _localization = localization;
+        }
 
         public ActionResult ToAirport(int id)
         {
@@ -29,6 +36,16 @@ namespace SkyPioneer.Controllers
         public ActionResult Error()
         {
             return View();
+        }
+
+        public IActionResult ChangeLanguage(string culture)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)), new CookieOptions()
+                {
+                    Expires = DateTimeOffset.UtcNow.AddYears(1)
+                });
+            return Redirect(Request.Headers["Referer"].ToString());
         }
 
 

@@ -119,6 +119,18 @@ namespace SkyPioneer.Controllers
             ModelState.Remove("Yetki");
             ModelState.Remove("MailAdres");
 
+            int id = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            var datafromdatabase = context.Kullancilar.Where(k => k.KullaniciID == id).FirstOrDefault();
+
+
+
+
+            if (id != datafromdatabase.KullaniciID)
+            {
+                return Redirect(Request.Headers["Referer"].ToString());
+            }
+
 
             if (ModelState.IsValid)
             {
@@ -173,15 +185,29 @@ namespace SkyPioneer.Controllers
 
         public IActionResult KullaniciDetails()
         {
+
             int id = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
             var datafromdatabase = context.Kullancilar.Where(k => k.KullaniciID == id).FirstOrDefault();
+
+           
+
+         
+            if (id != datafromdatabase.KullaniciID)
+            {
+                return Redirect(Request.Headers["Referer"].ToString());
+            }
             return View(datafromdatabase);
         }
         public IActionResult KullaniciDetailss(int id)
         {
-           
+
+            int kullanici = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             var datafromdatabase = context.Kullancilar.Where(k => k.KullaniciID == id).FirstOrDefault();
+            if (id != kullanici)
+            {
+                return RedirectToAction("Error","Arama");
+            }
             return View(datafromdatabase);
         }
     }

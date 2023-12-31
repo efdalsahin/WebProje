@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SkyPioneer.Models;
 
 namespace SkyPioneer.Controllers
@@ -19,13 +20,13 @@ namespace SkyPioneer.Controllers
             return View(dataFromDatabase);
         }
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult HavaAlaniCreate()
         {
 
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult HavaAlaniCreate(HavaAlani havaAlani)
         {
@@ -40,7 +41,7 @@ namespace SkyPioneer.Controllers
             TempData["msj"] = havaAlani.Isim + " isimli havaalani eklenemedi ";
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult HavaAlaniDelete(int id)
         {
             var dataFromDatabase = context.HavaAlanlari.Where(k => k.HavaAlaniID == id).FirstOrDefault();
@@ -51,7 +52,7 @@ namespace SkyPioneer.Controllers
             return View(dataFromDatabase);
 
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult HavaAlaniDeletee(int id)
         {
